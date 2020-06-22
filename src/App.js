@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './components/Card'
+import BackgroundPaper from './components/BackgroundPaper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <Card/>
+    <div className="App rounded overflow-hidden shadow-lg">
+      <header>
+          <BackgroundPaper />
       </header>
     </div>
   );

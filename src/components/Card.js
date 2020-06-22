@@ -32,7 +32,7 @@ export default function CardContainer() {
     return (
 
             <>
-                    <div className="flex justify-center items-center h-screen">
+                    <div className=" w-full flex justify-center items-center h-screen">
                             <div className="px-6 py-4 flex justify-center flex-col">
                                 <Tilt reset={true} perspective={1000} scale={scale}>
                                         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" flipSpeedBackToFront={1.5} flipSpeedFrontToBack={1.5}> 
@@ -41,8 +41,8 @@ export default function CardContainer() {
                                         </ReactCardFlip>    
                                 </Tilt>
                                 <div className="mt-16">
-                                    <button className="w-30 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={() => fetchKanjis()}  type='button'>Nouveau Kanji</button>
-                                    <button className="w-30 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
+                                    <button className="w-full md:w-30 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded " onClick={() => fetchKanjis()}  type='button'>Nouveau Kanji</button>
+                                    <button className="w-full md:w-30 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
 
                                 </div>
                            </div>
