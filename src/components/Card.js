@@ -7,6 +7,8 @@ import CardFront from './CardFront';
 import CardBack from './CardBack';
 
 
+import './Card.css';
+
 
 
 
@@ -41,8 +43,8 @@ export default function CardContainer() {
                                         </ReactCardFlip>    
                                 </Tilt>
                                 <div className="mt-16">
-                                    <button className="w-full md:w-30 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded " onClick={() => fetchKanjis()}  type='button'>Nouveau Kanji</button>
-                                    <button className="w-full md:w-30 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
+                                    <button className="card-button w-full md:w-30 mr-2 hover:bg-blue-400 text-white font-bold py-2 px-2  rounded mt-2 " onClick={() => fetchKanjis()}  type='button'>Nouveau Kanji</button>
+                                    <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
 
                                 </div>
                            </div>

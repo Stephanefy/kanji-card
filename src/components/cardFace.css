@@ -1,4 +1,7 @@
 .card-face{
     height: 22rem;
     width: 20rem;
+    background: #9d5b8b;
+    color: white;
+    border: none;
 }
