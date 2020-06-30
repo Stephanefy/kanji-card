@@ -45,8 +45,8 @@ export default function CardContainer() {
                                         <CardFront front character={kanji}  />
                                         </ReactCardFlip>    
                                 </Tilt>
-                                <div className="mt-16">
-                                    <button className="card-button w-full md:w-30 mr-2 hover:bg-blue-400 text-white font-bold py-2 px-2  rounded mt-2 " onClick={() => fetchKanjis()} type='button'>
+                                <div className='flex flex-col  items-center justify-center'>
+                                    <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2  " onClick={() => fetchKanjis()} type='button'>
                                     {
                                         isClicked ?  <p>Afficher un nouveau caractère</p> : <p>Afficher un caractère</p>
                                     }

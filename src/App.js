@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import BackgroundPaper from './components/BackgroundPaper';
 import HaruNatsuMode from './HaruNatsuMode/index';
 import AkiFuyuMode from './AkiFuyuMode/index';
 import Card from './components/Card';
@@ -20,10 +19,7 @@ function App() {
         <AkiFuyuMode/>
       </div>
       </header>
-      
       <Card />
-     
-    
     </div>
   );
 }
