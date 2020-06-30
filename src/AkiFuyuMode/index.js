@@ -49,7 +49,7 @@ const KisetsuModeToggle = () => {
             type="checkbox"
             onChange={() => toggleAkiFuyuChange()}
           />
-          <span className="slider round" />
+          <span className="slider-2 round" />
         </label>
         </div>
         </>

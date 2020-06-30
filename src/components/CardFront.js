@@ -5,26 +5,6 @@ import './cardFace.css';
 
 export default function CardFront({ character, fetchRandomKanjis }) {
 
-     // Create state variables
-
-// fetches data
-// React.useEffect(() => {
-//    const fetchData = () => {
-//          api.getKanjiDetails()
-//        .then((response )=>{
-//            setResponseData(response.data) 
-//        })
-//        .catch((error) => {
-//            console.log(error)
-//        })
-//    }
-//    fetchData()
-// }, [kanji])
-
-
-
-
-
     return (
 
         <>

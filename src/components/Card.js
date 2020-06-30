@@ -37,22 +37,23 @@ export default function CardContainer() {
     return (
 
             <>
-                    <div className=" w-full flex justify-center items-center">
-                            <div className="px-6 py-4 flex justify-center flex-col">
+            
+                    <div className="flex justify-center items-center">
+                            <div className="px-3 py-3 flex justify-center flex-col">
                                 <Tilt reset={true} perspective={1000} scale={scale}>
                                         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" flipSpeedBackToFront={1.5} flipSpeedFrontToBack={1.5}> 
                                         <CardBack back kanjiInfo={kanji}  />
                                         <CardFront front character={kanji}  />
                                         </ReactCardFlip>    
                                 </Tilt>
-                                <div className='flex flex-col  items-center justify-center'>
+                                <div className='flex flex-col items-center justify-center'>
                                     <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2  " onClick={() => fetchKanjis()} type='button'>
                                     {
                                         isClicked ?  <p>Afficher un nouveau caractère</p> : <p>Afficher un caractère</p>
                                     }
                                     </button>
                                     {
-                                       isClicked && <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
+                                       isClicked && <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tourner la carte</button>
 
                                     }
 
