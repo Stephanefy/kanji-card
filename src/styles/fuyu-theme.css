@@ -1,0 +1,5 @@
+html[data-theme="fuyu"] {
+    --color: rgb(255,255,255);
+    --background-gradient:linear-gradient(to top, #3493B0, #3493B0, #4AD3FC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --card-button: #0F586E
+}

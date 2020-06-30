@@ -14,13 +14,15 @@ import './Card.css';
 
 export default function CardContainer() {
     let [kanji, setKanji] = React.useState({})  
+    let [isClicked, setIsClicked] = React.useState(false)
+
     let [flipped, setIsFlipped] = React.useState({isFlipped: false})   
     const [scale, setScale] = React.useState(1.15);
 
     const fetchKanjis = () => {
         let randomIndex = Math.floor(Math.random() * Kanjis.length) + 1
         setKanji(Object.assign({}, Kanjis[randomIndex]))
-        console.log(kanji)
+        setIsClicked(true)
     }
 
     const handleClick = (e) =>{
@@ -28,13 +30,14 @@ export default function CardContainer() {
         setIsFlipped(!flipped)
     }
 
+ 
 
 
 
     return (
 
             <>
-                    <div className=" w-full flex justify-center items-center h-screen">
+                    <div className=" w-full flex justify-center items-center">
                             <div className="px-6 py-4 flex justify-center flex-col">
                                 <Tilt reset={true} perspective={1000} scale={scale}>
                                         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" flipSpeedBackToFront={1.5} flipSpeedFrontToBack={1.5}> 
@@ -43,8 +46,15 @@ export default function CardContainer() {
                                         </ReactCardFlip>    
                                 </Tilt>
                                 <div className="mt-16">
-                                    <button className="card-button w-full md:w-30 mr-2 hover:bg-blue-400 text-white font-bold py-2 px-2  rounded mt-2 " onClick={() => fetchKanjis()}  type='button'>Nouveau Kanji</button>
-                                    <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
+                                    <button className="card-button w-full md:w-30 mr-2 hover:bg-blue-400 text-white font-bold py-2 px-2  rounded mt-2 " onClick={() => fetchKanjis()} type='button'>
+                                    {
+                                        isClicked ?  <p>Afficher un nouveau caractère</p> : <p>Afficher un caractère</p>
+                                    }
+                                    </button>
+                                    {
+                                       isClicked && <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tournez la carte</button>
+
+                                    }
 
                                 </div>
                            </div>

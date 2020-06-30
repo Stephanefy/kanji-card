@@ -1,0 +1,5 @@
+html[data-theme="aki"] {
+    --color: rgb(255,255,255);
+    --background-gradient:linear-gradient(to top, #fea78c, #dd8174, #fea78c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --card-button:#a05359;
+}
