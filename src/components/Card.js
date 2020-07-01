@@ -47,13 +47,13 @@ export default function CardContainer() {
                                         </ReactCardFlip>    
                                 </Tilt>
                                 <div className='flex flex-col items-center justify-center'>
-                                    <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2  " onClick={() => fetchKanjis()} type='button'>
+                                    <button className="card-button w-full md:w-30 hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={() => fetchKanjis()} type='button'>
                                     {
-                                        isClicked ?  <p>Afficher un nouveau caractère</p> : <p>Afficher un caractère</p>
+                                        isClicked ?  <p className='text-base'>Afficher un nouveau caractère</p> : <p className='text-base'>Afficher un caractère</p>
                                     }
                                     </button>
                                     {
-                                       isClicked && <button className="card-button w-full md:w-30  hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tourner la carte</button>
+                                       isClicked && <button className="card-button w-full md:w-30 hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={(e) => handleClick(e)}  type='button'>Tourner la carte</button>
 
                                     }
 

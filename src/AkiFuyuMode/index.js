@@ -37,10 +37,10 @@ const KisetsuModeToggle = () => {
 
       return (
         <>
-           <div className='flex flex-col'>
+        <div className='flex flex-col'>
         <div className='flex justify-center w-16 mr-1'>
           {
-            isAki ? <span className='text-black mx-auto'>秋</span> : <span className='text-black'>冬</span>
+            isAki ? <span className='switch-kanji text-black mx-auto'>秋</span> : <span className='switch-kanji text-black'>冬</span>
           }
           
         </div>

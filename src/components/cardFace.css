@@ -1,7 +1,22 @@
 .card-face{
     height: 22rem;
     width: 15rem;
+    margin-top: 1.2rem;
+    margin-bottom: -0.4rem;
     background:var(--card-button);
     color: white;
     border: none;
+}
+
+
+
+@media screen and (min-width: 536px){
+
+    .card-face{
+        height: 22rem;
+        width: 15rem;
+        background:var(--card-button);
+        color: white;
+        border: none;
+    }
 }

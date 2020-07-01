@@ -107,3 +107,16 @@
   .slider-2.round:before {
     border-radius: 50%;
   }
+
+
+  @media screen and (max-width: 536px){
+
+    .switch{
+      margin-top: -4rem;
+    }
+
+    .switch-kanji{
+      margin-top: 2rem;
+    }
+
+  }
