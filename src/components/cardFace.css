@@ -1,8 +1,17 @@
+
+.card{
+    margin-top: 2.5rem;
+}
+
+.card-button-container{
+    margin-top: -1.25rem;
+}
+
+
+
 .card-face{
     height: 22rem;
     width: 15rem;
-    margin-top: 1.2rem;
-    margin-bottom: -0.4rem;
     background:var(--card-button);
     color: white;
     border: none;
@@ -12,9 +21,20 @@
 
 @media screen and (min-width: 536px){
 
+
+    .card{
+        margin-top: 10rem;
+    }
+
+    .card-button-container{
+        margin-top: 0
+    }
+
     .card-face{
         height: 22rem;
         width: 15rem;
+        margin-top: 0;
+        margin-bottom: 0;
         background:var(--card-button);
         color: white;
         border: none;

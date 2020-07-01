@@ -39,14 +39,14 @@ export default function CardContainer() {
             <>
             
                     <div className="flex justify-center items-center">
-                            <div className="px-3 py-3 flex justify-center flex-col">
+                            <div className="card px-3 py-3 flex justify-center flex-col">
                                 <Tilt reset={true} perspective={1000} scale={scale}>
                                         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal" flipSpeedBackToFront={1.5} flipSpeedFrontToBack={1.5}> 
                                         <CardBack back kanjiInfo={kanji}  />
                                         <CardFront front character={kanji}  />
                                         </ReactCardFlip>    
                                 </Tilt>
-                                <div className='flex flex-col items-center justify-center'>
+                                <div className='card-button-container flex flex-col items-center justify-center'>
                                     <button className="card-button w-full md:w-30 hover:bg-blue-400 text-white font-bold py-2 px-2 rounded mt-2" onClick={() => fetchKanjis()} type='button'>
                                     {
                                         isClicked ?  <p className='text-base'>Afficher un nouveau caractère</p> : <p className='text-base'>Afficher un caractère</p>
