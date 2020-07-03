@@ -1,5 +1,34 @@
-.card-button{
-    background: var(--card-button);
-    border: none;
-    width: 80%;
+.card-button-container{
+    display: none;
+}
+
+
+
+
+
+
+.mobile-navigation-container{
+    display: flex;
+    margin-top: 1.1rem;
+    justify-content: space-between ;
+    align-items: center;
+    font-size: 1.2rem;
+
+}
+
+
+@media screen and (min-width: 950px){
+    .card-button-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    
+
+    .card-button{
+        
+        background: var(--card-button);
+        border: none;
+        width: 80%;
+    }
 }
