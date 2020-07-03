@@ -17,8 +17,8 @@ export default function CardFront({character, fetchRandomKanjis}) {
                 <span role='img' aria-label='emoji'>👆</span>Une fois la catégorie choisie 
                 <br/>    
                 <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '意味' pour découvrir la signification et les differentes lectures du caractère<br/></p>
-                <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '次' pour découvrir afficher le prochain caractère<br/></p>
-                <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '前' pour découvrir retourner au caractère précédent<br/></p>
+                <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '次' pour afficher le prochain caractère<br/></p>
+                <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '前' pour retourner au caractère précédent<br/></p>
               </p>
               <div className='w-full flex justify-center mt-5'>
                 <p className='cheerful-text'>皆さん頑張りましょう！</p>
