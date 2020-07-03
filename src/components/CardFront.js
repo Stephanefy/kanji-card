@@ -21,7 +21,7 @@ export default function CardFront({character, fetchRandomKanjis}) {
                 <p className='mt-3'><span role='img' aria-label='emoji'>👉</span>cliquez sur '前' pour retourner au caractère précédent<br/></p>
               </p>
               <div className='w-full flex justify-center mt-5'>
-                <p className='cheerful-text'>皆さん頑張りましょう！</p>
+                <p className='cheerful-text'>一緒に頑張りましょう！</p>
                 <p><span role='img' aria-label='emoji'>💪</span></p>
               </div>
             </div>
