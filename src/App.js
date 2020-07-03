@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import HaruNatsuMode from './HaruNatsuMode/index';
 import AkiFuyuMode from './AkiFuyuMode/index';
-import SelectLevel from './components/SelectLevel';
 import Card from './components/Card';
 import Footer from './components/Footer';
 
@@ -17,7 +16,6 @@ function App() {
     <>
     <div className="App">
       <header>
-      <SelectLevel />
       <div className='w-full flex justify-end mr-2 sm:mr-0'> 
         <HaruNatsuMode/>
         <AkiFuyuMode/>
@@ -25,6 +23,7 @@ function App() {
       </header>
       <Card />
     </div>         
+    <Footer/>
     </>
   );
 }
