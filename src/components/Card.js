@@ -15,64 +15,17 @@ export default function CardContainer() {
   let [selectedLevel, setSelectedLevel] = React.useState(null);
 
   let [flipped, setIsFlipped] = React.useState({isFlipped: false});
-  const [scale, setScale] = React.useState(1.15);
 
   //Fetching kanjis by level or randomly
   const fetchKanjis = level => {
-    if (level === 5) {
-      const N5Kanjis = Kanjis.filter(k => k.category === "jlptn5");
-      let randomIndex = Math.floor(Math.random() * N5Kanjis.length) + 1;
-      setKanji(Object.assign({}, N5Kanjis[randomIndex]));
+      const levelKanjis = Kanjis.filter(k => k.category === `jlptn${level}`);
+      let randomIndex = Math.floor(Math.random() * levelKanjis.length) + 1;
+      setKanji(Object.assign({}, levelKanjis[randomIndex]));
       setPreviousKanjis(prevState => {
         return [...prevState, kanji];
       });
-      setSelectedLevel(5);
-    //   setIsClicked(true);
-    } else if (level === 4) {
-      const N4Kanjis = Kanjis.filter(k => k.category === "jlptn4");
-      let randomIndex = Math.floor(Math.random() * N4Kanjis.length) + 1;
-      setKanji(Object.assign({}, N4Kanjis[randomIndex]));
-      setPreviousKanjis(prevState => {
-        return [...prevState, kanji];
-      });
-      setSelectedLevel(4);
-    //   setIsClicked(true);
-    } else if (level === 3) {
-      const N3Kanjis = Kanjis.filter(k => k.category === "jlptn3");
-      let randomIndex = Math.floor(Math.random() * N3Kanjis.length) + 1;
-      setKanji(Object.assign({}, N3Kanjis[randomIndex]));
-      setPreviousKanjis(prevState => {
-        return [...prevState, kanji];
-      });
-      setSelectedLevel(3);
-    //   setIsClicked(true);
-    } else if (level === 2) {
-      const N2Kanjis = Kanjis.filter(k => k.category === "jlptn2");
-      let randomIndex = Math.floor(Math.random() * N2Kanjis.length) + 1;
-      setKanji(Object.assign({}, N2Kanjis[randomIndex]));
-      setPreviousKanjis(prevState => {
-        return [...prevState, kanji];
-      });
-      setSelectedLevel(2);
-    //   setIsClicked(true);
-    } else if (level === 1) {
-      const N1Kanjis = Kanjis.filter(k => k.category === "jlptn1");
-      let randomIndex = Math.floor(Math.random() * N1Kanjis.length) + 1;
-      setKanji(Object.assign({}, N1Kanjis[randomIndex]));
-      setPreviousKanjis(prevState => {
-        return [...prevState, kanji];
-      });
-      setSelectedLevel(1);
-    //   setIsClicked(true);
-    } else {
-      let randomIndex = Math.floor(Math.random() * Kanjis.length) + 1;
-      setKanji(Object.assign({}, Kanjis[randomIndex]));
-      setPreviousKanjis(prevState => {
-        return [...prevState, kanji];
-      });
-    //   setIsClicked(true);
+      setSelectedLevel(level)
     }
-  };
   //to flip the card and show the back
   const handleClick = () => {
     setIsFlipped(!flipped);
@@ -130,12 +83,12 @@ export default function CardContainer() {
               <p>1</p>
             </button>
           </div>
-          <Tilt reset={true} perspective={1000} scale={scale}>
+          <Tilt reset={true} perspective={1000}>
             <ReactCardFlip
               isFlipped={flipped}
               flipDirection="horizontal"
-              flipSpeedBackToFront={1.5}
-              flipSpeedFrontToBack={1.5}
+              flipSpeedBackToFront={2}
+              flipSpeedFrontToBack={2}
             >
               <CardBack back kanjiInfo={kanji} />
               <CardFront front character={kanji} />

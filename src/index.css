@@ -14317,15 +14317,16 @@ body{
 
 .App{
   /* Chrome 10-25, Safari 5.1-6 */
-  height: 95vh;
+  height: 100vh;
   width: 100%;
-  margin: 2rem 0;
 }
 
 header{
   width: 100%;
   height: 5vh;
 }
+
+/* media queries */
 
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
@@ -69138,3 +69139,4 @@ header{
     transition-delay: 1000ms;
   }
 }
+

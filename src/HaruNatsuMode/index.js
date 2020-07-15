@@ -40,7 +40,7 @@ const KisetsuModeToggle = () => {
         <div className='flex flex-col'>
         <div className='flex justify-center w-16 mr-1'>
           {
-            isHaru ? <span className='switch-kanji text-black'>春</span> : <span className='switch-kanji text-black'>夏</span>
+            isHaru ? <span className='switch-kanji text-semibold text-white'>春</span> : <span className='switch-kanji text-white text-semibold'>夏</span>
           }
           
         </div>
