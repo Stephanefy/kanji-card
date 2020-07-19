@@ -5,7 +5,7 @@ import "./cardFace.css";
 export default function CardFront({character}) {
   return (
     <>
-      <div className="card-face w-full mb-5 rounded shadow-xl border-2 border-yellow-500 bg-white">
+      <div className="card-face w-full mb-5 rounded shadow-xl">
         <div className="flex justify-center">
           {character.category ? (
             <p className="font-bold text-5xl p-4">
@@ -30,7 +30,7 @@ export default function CardFront({character}) {
          {
            character.category && 
         <>   
-        <div className="bg-white border-8 border-yellow-300">
+        <div className="bg-white">
           <p className="text-center text-6xl text-black">
             {character.character}
           </p>

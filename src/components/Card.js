@@ -42,7 +42,7 @@ export default function CardContainer() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="card px-3 py-3 flex justify-center flex-col">
+        <div className="card px-3 mb-3 mt-0 flex justify-center flex-col">
           <div className="flex justify-center mb-3">
             <h1 className="text-white">Niveau JLPT</h1>
           </div>

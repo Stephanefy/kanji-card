@@ -27,13 +27,13 @@ export default function CardBack({ kanjiInfo }) {
     return (
 
         <>
-            <div className="card-face mb-5 rounded shadow-xl border-8 border-yellow-500 bg-white">
+            <div className="card-face mb-5 rounded shadow-xl">
                 <div className="flex justify-center ">
                 {kanjiInfo.category ? <p className="font-bold text-5xl">Catégorie: {kanjiInfo.category}</p> : <p className="text-center font-semibold"><span role='image' aria-label='emoji'>☝️</span>Choisissez une catégorie pour commencer !</p>} 
                 </div>
                 {
                 kanjiInfo.category && 
-                <div className='bg-white text-black border-8 border-yellow-300'>
+                <div className='bg-white text-black'>
                     <p className="text-center text-6xl">{kanjiInfo.character}</p>
                 </div>
                 }

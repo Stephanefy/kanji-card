@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <div className="App">
-      <header className='w-full h-16 bg-white flex justify-center'>
+      <header id="header-nav" className='w-full h-24 flex justify-center'>
         <Nav />
       </header>
         <div className='w-full flex flex-col justify-center items-center mt-24'>
@@ -28,8 +28,9 @@ function App() {
         </div>
       
       <Card />
+      <Footer/>
     </div>         
-    <Footer/>
+   
     </>
   );
 }
