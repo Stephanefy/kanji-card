@@ -19,7 +19,7 @@ function App() {
         <Nav />
       </header>
         <div className='w-full flex flex-col justify-center items-center mt-24'>
-        <h1 className='text-white'>Choisissez une ambiance saisonnière</h1>
+        <h1 className='text-white font-semibold mb-16 text-5xl'>Choisissez une ambiance saisonnière</h1>
           <div className="flex">        
           <HaruNatsuMode/>
           <AkiFuyuMode/>

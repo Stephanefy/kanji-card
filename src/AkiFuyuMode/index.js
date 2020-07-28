@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect} from 'react';
 
-
 import '../styles/aki-theme.css';
 import '../styles/fuyu-theme.css';
 import './index.css';
