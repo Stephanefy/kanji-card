@@ -43,7 +43,7 @@ const KisetsuModeToggle = () => {
           }
           
         </div>
-        <label className="switch">
+        <label className="switch-2">
           <input
             type="checkbox"
             onChange={() => toggleAkiFuyuChange()}

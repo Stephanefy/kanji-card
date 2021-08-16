@@ -3,6 +3,8 @@ import { TiThMenu } from "react-icons/ti";
 import { TiTimes} from "react-icons/ti";
 import MobileMenu from './Mobile-menu';
 
+import { useRouteMatch, Link } from 'react-router-dom';
+
 import { ReactComponent as ReactLogo} from '../images/kanji-card-app-logo.svg'
 
 
@@ -25,7 +27,7 @@ import './Nav.css';
             </div>
             <ul className="hidden md:flex justify-around">
                 <li className="mx-2"><a href="#">Accueil</a></li>
-                <li className="mx-2"><a href="#">Listes</a></li>
+                <li className="mx-2"><a href="#">Quizz</a></li>
                 <li className="mx-2"><a href="#">Contact</a></li>
             </ul>
             <div className="flex md:hidden" onClick={handleClick}>

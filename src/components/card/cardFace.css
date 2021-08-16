@@ -36,7 +36,7 @@
     width: 15rem;
     background-color: #fff;
     color: #333;
-    border: 10px solid #333;
+    border: 10px solid var(--card-button);
 }
 
 .card-navigation-button{

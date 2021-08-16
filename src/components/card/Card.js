@@ -2,9 +2,11 @@ import React from "react";
 
 import Tilt from "react-parallax-tilt";
 import ReactCardFlip from "react-card-flip";
-import Kanjis from "../data/kanji.json";
+import Kanjis from "../../data/kanji.json";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
+import HaruNatsuMode from '../../HaruNatsuMode/index';
+import AkiFuyuMode from '../../AkiFuyuMode/index';
 
 import "./Card.css";
 
@@ -41,6 +43,13 @@ export default function CardContainer() {
 
   return (
     <>
+      <div className='w-full flex flex-col justify-center items-center mt-24'>
+        <h1 className='text-white font-semibold mb-16 text-5xl'>Choisissez une ambiance saisonnière</h1>
+          <div className="flex">        
+          <HaruNatsuMode/>
+          </div>
+
+        </div>
       <div className="flex justify-center items-center">
         <div className="card px-3 mb-3 mt-0 flex justify-center flex-col">
           <div className="flex justify-center mb-3">

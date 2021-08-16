@@ -1,7 +1,16 @@
+
 .switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-right: 1.25rem;
+}
+
+.switch-2 {
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 100px;
     height: 34px;
     margin-right: 1.25rem;
   }
@@ -20,7 +29,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ffdfa2;
+    background-color: #fff;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -28,17 +37,17 @@
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color:#fff;
+    height: 30px;
+    width: 30px;
+    left: 7.5px;
+    bottom: 7.5px;
+    background-color:#BD0029;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
   
   input:checked + .slider {
-    background-color: #bd80ffff;
+    background-color: var(--card-button);
   }
   
   input:focus + .slider {
@@ -80,9 +89,9 @@
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
+    /* -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(26px); */
   }
   /*slider 2*/
   input:checked + .slider-2:before {
@@ -97,7 +106,7 @@
   }
   
   .slider.round:before {
-    border-radius: 50%;
+    border-radius: 60%;
   }
 
   .slider-2.round {
