@@ -8,7 +8,7 @@ export default function CardFront({character}) {
       <div className="card-face w-full mb-5 rounded shadow-xl">
         <div className="flex justify-center">
           {character.category ? (
-            <p className="font-bold text-5xl p-4">
+            <p className="font-bold text-2xl p-4">
               Catégorie: {character.category}
             </p>
           ) : (

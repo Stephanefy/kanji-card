@@ -117,6 +117,13 @@
     border-radius: 50%;
   }
 
+  .switch-kanji {
+    position: absolute;
+    left: 15px;
+    top:12px;
+    z-index: 2;
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 536px){
 
@@ -124,8 +131,6 @@
       margin-top: -4rem;
     }
 
-    .switch-kanji{
-      margin-top: 2rem;
-    }
+
 
   }

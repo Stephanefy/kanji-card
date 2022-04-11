@@ -26,9 +26,10 @@ import './Nav.css';
                 <ReactLogo width="130" height="130" />
             </div>
             <ul className="hidden md:flex justify-around">
-                <li className="mx-2"><a href="#">Accueil</a></li>
-                <li className="mx-2"><a href="#">Quizz</a></li>
-                <li className="mx-2"><a href="#">Contact</a></li>
+                <li className="mx-2"><Link to="/">Accueil</Link></li>
+                <li className="mx-2"><Link to="/les-kanjis">Les Kanjis</Link></li>
+                <li className="mx-2"><Link to="/quizz">Quizz</Link></li>
+                <li className="mx-2"><Link to="/contact">Contact</Link></li>
             </ul>
             <div className="flex md:hidden" onClick={handleClick}>
                 {open ? <TiTimes className="menu-icon-open" /> : <TiThMenu className="menu-icon" /> }

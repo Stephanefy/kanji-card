@@ -73,7 +73,6 @@ const KisetsuModeToggle = () => {
         <>
         <div className='flex flex-col'>
         <div className="switch-parent">
-        <span className='switch-kanji text-semibold text-white'>春</span> 
 
         <label className="switch">
             <input
@@ -83,9 +82,9 @@ const KisetsuModeToggle = () => {
               value="haru"
               onClick={(e) => toggleHaruNatsuChange(e)}
             />
+            <span className='switch-kanji font-bold text-white'>春</span> 
             <span className="slider round" />
           </label>
-          <span className='switch-kanji text-semibold text-white'>夏</span> 
           <label className="switch">
 
             <input
@@ -95,9 +94,9 @@ const KisetsuModeToggle = () => {
               value="natsu"
               onClick={(e) => toggleHaruNatsuChange(e)}
             />
+            <span className='switch-kanji font-bold text-white'>夏</span> 
             <span className="slider round" />
           </label>
-          <span className='switch-kanji text-semibold text-white'>秋</span> 
 
           <label className="switch">
 
@@ -108,9 +107,9 @@ const KisetsuModeToggle = () => {
               value="aki"
               onClick={(e) => toggleHaruNatsuChange(e)}
             />
+            <span className='switch-kanji font-bold text-white'>秋</span> 
             <span className="slider round" />
           </label>
-          <span className='switch-kanji text-semibold text-white'>冬</span> 
 
           <label className="switch">
 
@@ -121,6 +120,8 @@ const KisetsuModeToggle = () => {
               value="fuyu"
               onClick={(e) => toggleHaruNatsuChange(e)}
             />
+            <span className='switch-kanji font-bold text-white'>冬</span> 
+
             <span className="slider round" />
           </label>
         </div>

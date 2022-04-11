@@ -6,13 +6,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  
 } from "react-router-dom";
 
 
-import Nav from './components/Nav';
 import Card from './components/card/Card';
-import Quizz from './components/quizz/Quizz';
+import Quizz from './pages/quizz/Quizz';
+import Kanjis from './pages/kanjis';
+import KanjiList from './pages/kanjis/KanjiList';
 import Footer from './components/Footer';
 
 import './styles/App.css'
@@ -23,13 +24,24 @@ function App() {
 
   return (
     <>
-    <Layout className="App">
-      <Card/>
-    </Layout>         
-    <Router>
-      <Switch>
-      </Switch>
-    </Router>
+      <Router>
+        <Layout className="App">
+            <Switch>
+              <Route path="/quizz">
+                <Quizz/>
+              </Route>
+              <Route path="/les-kanjis">
+                <Kanjis/>
+              </Route>
+              <Route path="/gakushu-kanji/:params">
+                <KanjiList/>
+              </Route>
+              <Route path="/">
+                <Card/>
+              </Route>
+            </Switch>
+        </Layout>         
+      </Router>
     </>
   );
 }
