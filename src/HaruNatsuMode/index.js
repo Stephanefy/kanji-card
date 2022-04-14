@@ -9,6 +9,7 @@ import '../styles/fuyu-theme.css';
 
 import './index.css';
 
+const seasons = [[0,1,2], [3,4,5], [6,7,8], [9,10,11]]
 
 const KisetsuModeToggle = () => {
     const [isHaru, setIsHaru] = useState(localStorage.getItem("theme") === "haru" ? true : false);
@@ -17,16 +18,26 @@ const KisetsuModeToggle = () => {
     const [isFuyu, setIsFuyu] = useState(localStorage.getItem("theme") === "aki" ? true : false)
 
     useEffect(() => {
+
+      const month = new Date().getMonth()
+
+      seasons[1].includes(month) && localStorage.setItem("theme", "haru")
+      seasons[2].includes(month) && localStorage.setItem("theme", "natsu")
+      seasons[3].includes(month) && localStorage.setItem("theme", "aki")
+      seasons[0].includes(month) && localStorage.setItem("theme", "fuyu")
+
       document
       .getElementsByTagName("HTML")[0]
       .setAttribute("data-theme", localStorage.getItem("theme"));
     },[]);
 
-    const toggleHaruNatsuChange = (e) => {
+    
 
-        console.log(e.target)
+    const toggleHaruNatsuChange = (e, currentMonth) => {
+      
 
-        if (e.target.value === "haru") {
+        if (e.target?.value === "haru") {
+          
           localStorage.setItem("theme", "haru");
           document
             .getElementsByTagName("HTML")[0]
@@ -36,7 +47,7 @@ const KisetsuModeToggle = () => {
             setIsAki(false);
             setIsFuyu(false);
         } 
-        if (e.target.value === "natsu"){
+        if (e.target?.value === "natsu"){
           localStorage.setItem("theme", "natsu");
           document
             .getElementsByTagName("HTML")[0]
@@ -47,7 +58,7 @@ const KisetsuModeToggle = () => {
             setIsFuyu(false);
 
         }
-        if (e.target.value === "aki"){
+        if (e.target?.value === "aki"){
           localStorage.setItem("theme", "aki");
           document
             .getElementsByTagName("HTML")[0]
@@ -57,8 +68,8 @@ const KisetsuModeToggle = () => {
             setIsAki(true);
             setIsFuyu(false);
         }
-        if (e.target.value === "fuyu"){
-          localStorage.setItem("theme", "fuyu");
+        if (e.target?.value === "fuyu" ){
+          localStorage.setItem("theme", "fuyu" );
           document
             .getElementsByTagName("HTML")[0]
             .setAttribute("data-theme", localStorage.getItem("theme"));
@@ -68,6 +79,10 @@ const KisetsuModeToggle = () => {
             setIsFuyu(true)
         }
     }
+
+
+
+
 
       return (
         <>

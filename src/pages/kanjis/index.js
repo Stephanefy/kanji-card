@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Gakushu from './Gakushu';
 import Joyou from './Joyou';
 import Jinmeiyou from './Jinmeiyou';
-import AllKanjis from './AllKanjis';
+import Card from '../../components/card/Card'
 
 const KangiGrade = [
     {
@@ -35,6 +35,9 @@ const KanjiListType = [
     {
         name: 'gakushu'
     },
+    {
+        name: 'jlpt'
+    }
 ]
 
 
@@ -87,6 +90,10 @@ const Kanjis = () => {
                 )}
                 {selectedCollection === "jinmeiyou" && (
                     <Jinmeiyou pushToGrade={pushToGrade} />
+
+                )}
+                {selectedCollection === "jlpt" && (
+                    <Card />
 
                 )}
             </ul>

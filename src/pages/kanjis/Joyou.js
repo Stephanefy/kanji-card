@@ -10,7 +10,7 @@ const Joyou = ({ pushToGrade }) => {
                         className="h-full w-full r bg-white rounded-lg shadow-2xl flex justify-center items-center"
                         
                         >
-                        <butont onClick={() => pushToGrade("jouyou")}><h3 className="text-3xl  text-center font-extrabold">常用漢字</h3></butont>
+                        <button onClick={() => pushToGrade("jouyou")}><h3 className="text-3xl  text-center font-extrabold">常用漢字</h3></button>
                     </div>
             </div>
     </div>

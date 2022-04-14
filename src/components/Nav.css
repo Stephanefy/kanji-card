@@ -1,7 +1,10 @@
 #header-nav{
     background: rgba(255, 255, 255, 1);
-    z-index: -99;
+    z-index: 99;
     font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    border-bottom: 10px solid var(--card-button);
     
 }
 

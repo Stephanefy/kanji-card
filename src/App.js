@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 
-import Card from './components/card/Card';
+import HomePage from './pages/Home'
 import Quizz from './pages/quizz/Quizz';
 import Kanjis from './pages/kanjis';
 import KanjiList from './pages/kanjis/KanjiList';
@@ -19,7 +19,12 @@ import Footer from './components/Footer';
 import './styles/App.css'
 import './styles/haru-theme.css';
 
+
+
+
+
 function App() {
+
 
 
   return (
@@ -37,7 +42,7 @@ function App() {
                 <KanjiList/>
               </Route>
               <Route path="/">
-                <Card/>
+                <HomePage/>
               </Route>
             </Switch>
         </Layout>         
