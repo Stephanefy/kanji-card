@@ -63,12 +63,17 @@ const Kanjis = () => {
   
 
   return (
-    <div className='h-screen w-full'>
+    <div className='w-full'>
         <section className="p-56 min-h-screen flex md:flex-column items-center justify-between flex-wrap sm:flex-col">
             <div className="flex justify-between">
                 {
                     KanjiListType.map(b => (
-                        <button onClick={(e) => onSelectKanjiCollection(e)} className='bg-blue-100 p-2 mx-2 rounded-b-2xl font-semibold'>{b.name}</button>
+                        <button onClick={(e) => onSelectKanjiCollection(e)} className='kanji-category-btn bg-red-800 text-white p-2 mx-2 rounded-full font-semibold'>
+                            {b.name === "jouyou" && "常用"}
+                            {b.name === "gakushu" && "学習"}
+                            {b.name === "jinmeiyou" && "人名"}
+                            {b.name === "jlpt" && "JLPT"}
+                        </button>
                     ))
                 }
             </div>
@@ -78,21 +83,21 @@ const Kanjis = () => {
                 </h2>
             </div>
             <ul className="flex justify-between">
-                {selectedCollection === "gakushu" && KangiGrade.map((grade, idx) => (
+                {selectedCollection === "学習" && KangiGrade.map((grade, idx) => (
                     <li>
                         <Gakushu grade={grade} idx={idx} pushToGrade={pushToGrade} />
                     </li>
 
                 ))}
-                {selectedCollection === "jouyou" && (
+                {selectedCollection === "常用" && (
                     <Joyou pushToGrade={pushToGrade} />
 
                 )}
-                {selectedCollection === "jinmeiyou" && (
+                {selectedCollection === "人名" && (
                     <Jinmeiyou pushToGrade={pushToGrade} />
 
                 )}
-                {selectedCollection === "jlpt" && (
+                {selectedCollection === "JLPT" && (
                     <Card />
 
                 )}

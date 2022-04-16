@@ -92,8 +92,8 @@ export default function CardContainer() {
             <ReactCardFlip
               isFlipped={flipped}
               flipDirection="horizontal"
-              flipSpeedBackToFront={2}
-              flipSpeedFrontToBack={2}
+              flipSpeedBackToFront={1}
+              flipSpeedFrontToBack={1}
             >
               <CardBack back kanjiInfo={kanji} />
               <CardFront front character={kanji} />

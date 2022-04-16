@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../pages/kanjis/kanjiListCard.css'
+import './Modal.css'
 
 const Modal = ({ setIsOpen, selectedKanji }) => {
 
@@ -24,7 +25,7 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
 
   return (
     <div 
-        class="h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed z-10" 
+        class="modal-container h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed z-10" 
         onClick={() => setIsOpen(false)}
         style={{background:'rgba(0, 0, 0, 0.2) 100% 100%'}}
         >
@@ -46,8 +47,8 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                     <div rows="3" class="p-4 text-gray-500 rounded-xl resize-none">
                         <ul className='text-2xl'>
                             <li>Niveau JLPT: {kanji.jlpt}</li>
-                            <li>Lecture Kun: {kanji.kun_readings}</li>
-                            <li>Lecture On: {kanji.on_readings}</li>
+                            <li className="bg-red-600 p-3 text-white">Lecture Kun: {kanji.kun_readings}</li>
+                            <li className="bg-gray-800 p-3 text-white">Lecture On: {kanji.on_readings}</li>
                             <li className='bg-white p-3'>Définitions: {kanji.meanings.map(m => (
                                 <p className='text-base'>{m}</p>
                             ))}</li>
@@ -58,10 +59,6 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                 <div class="h-20 flex items-center justify-center">
                     <button className="text-gray-600">Fermer</button>
                 </div>
-                </div>
-
-                <div class="mt-8 text-gray-700">
-                Crédits <a class="font-bold" href="https://dribbble.com/shots/12052834-Rating-popup">Goga</a>
                 </div>
             </div>
 

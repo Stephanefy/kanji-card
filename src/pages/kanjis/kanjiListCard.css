@@ -41,3 +41,7 @@
     border: 10px solid var(--card-button);
 
 }
+
+.kanji-category-btn {
+  border: 10px solid var(--card-button)
+}

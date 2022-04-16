@@ -102,48 +102,52 @@ const KanjiList = () => {
                 </div>
             ) : (
                 <ul className="flex flex-col w-full justify-center items-center my-24">
-            {(params === "1" || "2" || "3" || "4" || "5" || "jinmeiyou" ) && params !== "jouyou" && splitArrayIntoChunksOfLen(kanjis, 100).map(subArr => (
-                <Splide
-            options={{
-                perPage: subArr.length < 8 ? 1 : 10,
-                height: 300,
-                gap   : '2rem',
-                padding: '10rem',
-                pagination: true,
-                arrows: false,
-                perMove: 1,
-                keyboard: 'global',
-                preloadPages: 1
-            }}>
-                {
-                    subArr.map((data, index) => (
-                        <SplideSlide key={data[index]}>
-                                        <div className="h-32 cursor-pointer mb-5 mx-auto ">
-                                        <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
-                                                <div 
-                                                    className="card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
-                                                    onClick={() => {
-                                                        setIsOpen(true)
-                                                        setSelectedKanjis(data)
-                                                    }}
-                                                    >
-                                                    <h3 className="text-5xl font-extrabold">{data}</h3>
-                                                </div>
-                                        </div>
-                                        </div>
+            {(params === "1" || "2" || "3" || "4" || "5" || "jinmeiyou" ) && params !== "jouyou" && splitArrayIntoChunksOfLen(kanjis, 100).map((subArr, idx) => (
+                <>
+                    <h4 className='text-3xl text-white mb-5'>Série {idx + 1} </h4>
+                    <Splide
+                options={{
+                    perPage: subArr.length < 8 ? 1 : 10,
+                    height: 300,
+                    gap   : '2rem',
+                    padding: '10rem',
+                    pagination: true,
+                    arrows: false,
+                    perMove: 1,
+                    keyboard: 'global',
+                    preloadPages: 1
+                }}>
+                    {
+                        subArr.map((data, index) => (
+                            <SplideSlide key={data[index]}>
+                                            <div className="h-32 cursor-pointer mb-5 mx-auto ">
+                                            <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
+                                                    <div 
+                                                        className="card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
+                                                        onClick={() => {
+                                                            setIsOpen(true)
+                                                            setSelectedKanjis(data)
+                                                        }}
+                                                        >
+                                                        <h3 className="text-5xl font-extrabold">{data}</h3>
+                                                    </div>
+                                            </div>
+                                            </div>
 
-                                </SplideSlide>
+                                    </SplideSlide>
 
-                    ))
-                }
-            </Splide>
+                        ))
+                    }
+                </Splide>
+
+                </>
         
 
 
             ))}
         {(params === "jouyou" && splitArrayIntoChunksOfLen(kanjis, 100).map((subArr, idx) => (
             <>
-            <h4 className='text-3xl'>Série {idx + 1} </h4>
+            <h4 className='text-3xl text-white mb-5'>Série {idx + 1} </h4>
                 <Splide
                 options={{
                     perPage:subArr.length === 100 ? 5 : 2,
@@ -188,7 +192,7 @@ const KanjiList = () => {
         
       
         {isOpen && <Modal setIsOpen={setIsOpen} selectedKanji={selectedKanji} />}
-        <p className='text-5xl font-semibold'>{kanjis.length} Caractères</p>
+        {kanjis.length !== 0 && <p className='text-5xl font-semibold text-white'>{kanjis.length} Caractères</p>}
 
     </section>
     )
