@@ -20,6 +20,23 @@ body{
     background-size: 10%;
 }
 
+.list-btn{
+    width: 60px;
+    height: 60px;
+    background-color: var(--card-button);
+    border-radius: 50%;
+    position: fixed;
+    right: 2%;
+    bottom: 10%;
+}
+
+.learning-list-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
 
 
 

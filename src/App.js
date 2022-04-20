@@ -22,7 +22,6 @@ import './styles/haru-theme.css';
 
 
 
-
 function App() {
 
 
@@ -32,6 +31,9 @@ function App() {
       <Router>
         <Layout className="App">
             <Switch>
+              <Route exact path="/">
+                <HomePage/>
+              </Route>
               <Route path="/quizz">
                 <Quizz/>
               </Route>
@@ -40,9 +42,6 @@ function App() {
               </Route>
               <Route path="/gakushu-kanji/:params">
                 <KanjiList/>
-              </Route>
-              <Route path="/">
-                <HomePage/>
               </Route>
             </Switch>
         </Layout>         

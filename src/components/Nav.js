@@ -4,6 +4,7 @@ import { TiTimes} from "react-icons/ti";
 import MobileMenu from './Mobile-menu';
 import HaruNatsuMode from '../HaruNatsuMode/index'
 import { useRouteMatch, Link } from 'react-router-dom';
+import NavLink from './NavLink';
 
 import { ReactComponent as ReactLogo} from '../images/kanji-card-app-logo.svg'
 
@@ -27,9 +28,9 @@ import './Nav.css';
             </div>
             <div className='pl-32'>
                 <ul className="hidden md:flex flex-initial w-full px-auto">
-                    <li className="mx-2"><Link to="/">Accueil</Link></li>
-                    <li className="mx-2"><Link to="/les-kanjis">Les Kanjis</Link></li>
-                    <li className="mx-2"><Link to="#">Quizz</Link></li>
+                    <li className="mx-2"><NavLink to="/" label="Accueil" activeOnlyWhenExact={true}/></li>
+                    <li className="mx-2"><NavLink to="/les-kanjis" label="Les Kanjis"/></li>
+                    {/* <li className="mx-2"><Link to="#">Quizz</Link></li> */}
                 </ul>
 
             </div>

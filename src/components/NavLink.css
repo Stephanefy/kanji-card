@@ -1,0 +1,4 @@
+.active-link {
+    transition: border-bottom 0.1s;
+    border-bottom: 5px solid var(--card-button);
+}

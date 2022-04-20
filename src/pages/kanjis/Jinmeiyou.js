@@ -9,7 +9,7 @@ const Jinmeiyou = ({pushToGrade}) => {
                 className="h-full w-full r bg-white rounded-lg shadow-2xl flex justify-center items-center"
                 
                 >
-                <butont onClick={() => pushToGrade("jinmeiyou")}><h3 className="text-4xl  text-center font-extrabold">人名用漢字</h3></butont>
+                <button onClick={() => pushToGrade("jinmeiyou")}><h3 className="text-4xl  text-center font-extrabold">人名用漢字</h3></button>
             </div>
     </div>
     </div>

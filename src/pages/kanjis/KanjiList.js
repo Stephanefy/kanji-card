@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '../../../node_modules/@splidejs/splide/dist/css/splide.min.css';
 import Modal from '../../components/Modal';
-import { FixedSizeList } from 'react-window';
+import {SiCheckmarx} from 'react-icons/si'
 
 import "./kanjiListCard.css"
 
@@ -15,6 +15,9 @@ const KanjiList = () => {
     const [kanjis, setKanjis] = useState([])
     const [isOpen, setIsOpen] = useState(false);
     const [selectedKanji, setSelectedKanjis] = useState("")
+
+
+    const learningList = JSON.parse(localStorage.getItem('learningList'))
 
     let params = location.state.params
 
@@ -121,17 +124,18 @@ const KanjiList = () => {
                         subArr.map((data, index) => (
                             <SplideSlide key={data[index]}>
                                             <div className="h-32 cursor-pointer mb-5 mx-auto ">
-                                            <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
-                                                    <div 
-                                                        className="card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
-                                                        onClick={() => {
-                                                            setIsOpen(true)
-                                                            setSelectedKanjis(data)
-                                                        }}
-                                                        >
-                                                        <h3 className="text-5xl font-extrabold">{data}</h3>
-                                                    </div>
-                                            </div>
+                                                <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
+                                                        <div 
+                                                            className="relative card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
+                                                            onClick={() => {
+                                                                setIsOpen(true)
+                                                                setSelectedKanjis(data)
+                                                            }}
+                                                            >
+                                                            <h3 className="character text-5xl font-extrabold">{data}</h3>
+                                                            {learningList?.includes(data) && (<p className='absolute top-0'><SiCheckmarx size={30}/></p>)}
+                                                        </div>
+                                                </div>
                                             </div>
 
                                     </SplideSlide>
@@ -166,13 +170,15 @@ const KanjiList = () => {
                                             <div className="h-32 cursor-pointer mb-5 mx-auto ">
                                             <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
                                                     <div 
-                                                        className="card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
+                                                        className="relative card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
                                                         onClick={() => {
                                                             setIsOpen(true)
                                                             setSelectedKanjis(data)
                                                         }}
                                                         >
                                                         <h3 className="text-5xl font-extrabold">{data}</h3>
+                                                        {learningList?.includes(data) && (<p className='absolute top-0'><SiCheckmarx size={30}/></p>)}
+                                                        <button><i></i></button>
                                                     </div>
                                             </div>
                                             </div>

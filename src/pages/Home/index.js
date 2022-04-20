@@ -5,7 +5,7 @@ const HomeIndex = () => {
     <main className='min-h-screen'>
         <section className='h-full flex flex-col justify-center items-center'>
             <div>
-                <h1 className='text-5xl mt-56 text-white font-semibold'>Bienvenu sur Kanji card</h1>
+                <h1 className='text-5xl mt-56 text-white font-semibold'>Bienvenue sur Kanji card</h1>
             </div>
             <div className="mt-8">
                 <h3 className='text-3xl text-white'>Retrouvez les 13 000 kanjis de la langue japonaise</h3>

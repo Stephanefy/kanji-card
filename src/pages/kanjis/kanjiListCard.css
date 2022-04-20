@@ -45,3 +45,27 @@
 .kanji-category-btn {
   border: 10px solid var(--card-button)
 }
+
+.search-btn-icon {
+  background-image: url("../../images/magnifier.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.magnifier {
+  top: 15%;
+  right: 4%;
+  fill: var(--card-button);
+}
+
+.search-input {
+  border: 2px solid var(--card-button)
+}
+
+.character {
+  color: var(--card-button)
+}
+
+.add-button-icon {
+  color: var(--card-button)
+}
