@@ -95,26 +95,35 @@ const KanjiList = () => {
 
     return (
         <section className="min-h-screen w-full flex md:flex-column items-center flex-wrap sm:flex-col">
-        <div className='flex h-26 justify-center items-center'>
+        <div className='flex h-26 w-full justify-center items-center'>
             <h2 className='text-white text-5xl mt-32'>{KanjiListTitle(location.state.params)}</h2>
         </div>
         {
             kanjis.length === 0 ? (
-                <div className='h-56 flex justify-center items-center'>
+                <div className='h-56 flex justify-center items-center mx-auto'>
                     <span class="loader"></span>
                 </div>
             ) : (
                 <ul className="flex flex-col w-full justify-center items-center my-24">
-            {(params === "1" || "2" || "3" || "4" || "5" || "jinmeiyou" ) && params !== "jouyou" && splitArrayIntoChunksOfLen(kanjis, 100).map((subArr, idx) => (
+            {(params === "1" || "2" || "3" || "4" || "5" || "jinmeiyou" ) && params !== "jouyou" && splitArrayIntoChunksOfLen(kanjis, 300).map((subArr, idx) => (
                 <>
                     <h4 className='text-3xl text-white mb-5'>Série {idx + 1} </h4>
                     <Splide
                 options={{
                     perPage: subArr.length < 8 ? 1 : 10,
+                    breakpoints: {
+                        1024 : {
+                        perPage: 2
+                        },
+                        640: {
+                        perPage: 1,
+                    
+                        },
+                    },
                     height: 300,
-                    gap   : '2rem',
-                    padding: '10rem',
-                    pagination: true,
+                    width: '100vw',
+                    gap   : '10em',
+                    pagination: false,
                     arrows: false,
                     perMove: 1,
                     keyboard: 'global',
@@ -123,10 +132,10 @@ const KanjiList = () => {
                     {
                         subArr.map((data, index) => (
                             <SplideSlide key={data[index]}>
-                                            <div className="h-32 cursor-pointer mb-5 mx-auto ">
-                                                <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
+                                            <div className="h-32 cursor-pointer mb-5 mx-auto">
+                                                <div className="absolute transform hover:scale-95 transition duration-300 w-full">
                                                         <div 
-                                                            className="relative card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
+                                                            className="relative card__border h-56 xs:w-12/12 lg:w-64 bg-white rounded-lg shadow-2xl flex justify-center items-center"
                                                             onClick={() => {
                                                                 setIsOpen(true)
                                                                 setSelectedKanjis(data)
@@ -156,9 +165,19 @@ const KanjiList = () => {
                 options={{
                     perPage:subArr.length === 100 ? 5 : 2,
                     height: 300,
-                    gap   : '1.5rem',
-                    padding: '10rem',
-                    pagination: true,
+                    breakpoints: {
+                        1024 : {
+                        perPage: 2
+                        },
+                        640: {
+                        perPage: 1,
+                    
+                        },
+                    },
+                    width: '100vw',
+                    gap   : '10em',
+                    padding: '5rem',
+                    pagination: false,
                     arrows: false,
                     perMove: 1,
                     keyboard: 'global',
@@ -168,16 +187,16 @@ const KanjiList = () => {
                         subArr.map((data, index) => (
                             <SplideSlide key={data[index]}>
                                             <div className="h-32 cursor-pointer mb-5 mx-auto ">
-                                            <div className="absolute inset-0 transform  hover:scale-95 transition duration-300">
+                                            <div className="absolute inset-0 transform  hover:scale-95 transition duration-300 w-full">
                                                     <div 
-                                                        className="relative card__border h-56 w-12/12 bg-white rounded-lg shadow-2xl flex justify-center items-center"
+                                                        className="relative card__border h-56 xs:w-12/12 lg:w-64 bg-white rounded-lg shadow-2xl flex justify-center items-center"
                                                         onClick={() => {
                                                             setIsOpen(true)
                                                             setSelectedKanjis(data)
                                                         }}
                                                         >
                                                         <h3 className="text-5xl font-extrabold">{data}</h3>
-                                                        {learningList?.includes(data) && (<p className='absolute top-0'><SiCheckmarx size={30}/></p>)}
+                                                        {learningList?.includes(data) && (<p className='absolute bottom-0 '>Dans ma liste</p>)}
                                                         <button><i></i></button>
                                                     </div>
                                             </div>
@@ -198,7 +217,7 @@ const KanjiList = () => {
         
       
         {isOpen && <Modal setIsOpen={setIsOpen} selectedKanji={selectedKanji} />}
-        {kanjis.length !== 0 && <p className='text-5xl font-semibold text-white'>{kanjis.length} Caractères</p>}
+        {kanjis.length !== 0 && <p className='text-5xl font-semibold text-white mx-auto'>{kanjis.length} Caractères</p>}
 
     </section>
     )

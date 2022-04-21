@@ -90,7 +90,7 @@ const KanjisIndex = () => {
   return (
     <div className='w-full'>
         <section className="min-h-screen flex md:flex-column items-center flex-wrap sm:flex-col">
-            <div className="flex flex-col items-center pt-56">
+            <div className="flex flex-col items-center pt-56 mx-auto">
                 <div>
                 {
                     KanjiListType.map(b => (
@@ -126,23 +126,29 @@ const KanjisIndex = () => {
                     {selectedCollection === "gakushu" && "Gakushū kanji" }   
                 </h2>
             </div>
-            <ul className="flex justify-between">
+            <ul className="flex justify-between mx-auto selection-cards">
                 {selectedCollection === "学習" && KangiGrade.map((grade, idx) => (
-                    <li>
+                    <li className='gakushu-cards'>
                         <Gakushu grade={grade} idx={idx} pushToGrade={pushToGrade} />
                     </li>
 
                 ))}
                 {selectedCollection === "常用" && (
-                    <Joyou pushToGrade={pushToGrade} />
+                   <li>
+                   <Joyou pushToGrade={pushToGrade} />
+                   </li> 
 
                 )}
                 {selectedCollection === "人名" && (
-                    <Jinmeiyou pushToGrade={pushToGrade} />
+                    <li>
+                        <Jinmeiyou pushToGrade={pushToGrade} />
+                    </li>
 
                 )}
                 {selectedCollection === "JLPT" && (
-                    <Card />
+                    <li>
+                        <Card />
+                    </li>
 
                 )}
             </ul>

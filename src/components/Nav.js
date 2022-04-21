@@ -5,6 +5,7 @@ import MobileMenu from './Mobile-menu';
 import HaruNatsuMode from '../HaruNatsuMode/index'
 import { useRouteMatch, Link } from 'react-router-dom';
 import NavLink from './NavLink';
+import { useWindowSize } from '../hooks/useWindowSize'
 
 import { ReactComponent as ReactLogo} from '../images/kanji-card-app-logo.svg'
 
@@ -15,10 +16,14 @@ import './Nav.css';
 
     const [open, setOpen] = useState(false)
 
+    const windowSize = useWindowSize()
+
     const handleClick = () => {
         setOpen(!open)
     }
 
+
+    console.log(windowSize)
 
     return (
         <>
@@ -35,7 +40,7 @@ import './Nav.css';
 
             </div>
             <div>
-                <HaruNatsuMode/>
+                {windowSize.width > 560 && <HaruNatsuMode/> }
             </div>
 
             <div className="flex md:hidden" onClick={handleClick}>

@@ -69,3 +69,11 @@
 .add-button-icon {
   color: var(--card-button)
 }
+
+@media screen and (max-width: 560px) {
+  .selection-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

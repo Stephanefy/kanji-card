@@ -127,10 +127,22 @@
 
   @media screen and (max-width: 536px){
 
-    .switch{
+    .switch {
       margin-top: -4rem;
     }
 
+  }
 
 
+  @media screen and (max-width: 560px){
+    .switch-parent {
+      position: fixed;
+      right: 0;
+      bottom: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+    .switch {
+      margin-top: .5em;
+    }
   }

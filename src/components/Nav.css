@@ -1,6 +1,6 @@
 #header-nav{
     background: rgba(255, 255, 255, 1);
-    z-index: 99;
+    z-index: 30;
     font-size: 1.2rem;
     position: fixed;
     top: 0;

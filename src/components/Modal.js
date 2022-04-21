@@ -30,11 +30,17 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
        
     }, [learningList])
 
+    const handleCloseModal = (e) => {
 
+        console.log(e)
+
+        setIsOpen(false)
+        setError(false)
+    }
 
     return (
         <div
-            className="h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed z-10"
+            className="h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed top-0 z-50"
             style={{ background: 'rgba(0, 0, 0, 0.2) 100% 100%' }}
         >
             {!kanji ? (
@@ -42,14 +48,11 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                     <span className="loader"></span>
                 </div>
             ) : kanji.meanings && !error ? (
-                <div className="py-auto w-4/12 sm:max-w-xl sm:mx-auto">
+                <div className="py-auto xs:w- xl:w-4/12">
                     <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
                         <button
                             className="text-gray-600 absolute right-0 p-3"
-                            onClick={() => {
-                                setIsOpen(false)
-                                setError(false)
-                            }}
+                            onClick={handleCloseModal}
                         >
                             X
                         </button>

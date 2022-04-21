@@ -41,7 +41,7 @@ export default function CardContainer() {
 
   return (
     <>
-      <div className='w-full flex flex-col justify-center items-center mt-24'>
+      <div className='w-full flex flex-col justify-center items-center'>
           <div className="flex">        
           </div>
 

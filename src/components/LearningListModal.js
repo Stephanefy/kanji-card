@@ -20,8 +20,8 @@ const LearningListModal = ({ setIsOpen }) => {
                     <div
                         className="h-screen w-full flex flex-col justify-center items-center learning-list-modal"
                         style={{ background: 'rgba(0, 0, 0, 0.2) 100% 100%' }}>
-                        <div className="py-auto w-4/12 sm:max-w-xl sm:mx-auto">
-                            <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
+                        <div className="py-auto sm:w-10/12 xxl:w-4/12 sm:max-w-xl  sm:mx-auto">
+                            <div className="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
                                 <button
                                     className="text-gray-600 absolute right-0 p-3"
                                     onClick={() => {
