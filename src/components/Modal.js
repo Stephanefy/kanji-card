@@ -14,11 +14,16 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
         })
             .then((response) => response.json())
             .then((data) => {
+                if(data.error) {
+                    throw new Error()
+                }
                 setKanji(data)
-                console.log(data)
+                
             })
             .catch((err) => {
+                console.log('reached')
                 setError(true)
+                setIsOpen(false)
             })
     }, [])
 
@@ -38,6 +43,19 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
         setError(false)
     }
 
+    useEffect(() => {
+
+        console.log(error)
+
+        let timeOut = setTimeout(() => {
+            setError(false)
+        }, 2500)
+    
+        return () => {
+            clearTimeout(timeOut)
+        }
+      },[error])
+
     return (
         <div
             className="h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed top-0 z-50"
@@ -47,7 +65,7 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                 <div className="flex justify-center">
                     <span className="loader"></span>
                 </div>
-            ) : kanji.meanings && !error ? (
+            ) : kanji.meanings && !error && (
                 <div className="py-auto xs:w- xl:w-4/12">
                     <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
                         <button
@@ -107,13 +125,17 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                         </div>
                     </div>
                 </div>
-            ) : (
+            )}
+            {
+                error && (
                 <p className="text-white font-semibold">
                     Aucune information concernant ce caractère <br />
                     Veuillez noter qu'il est impossible à l'heure actuelle de
                     rechercher un caractère en Romaji
                 </p>
-            )}
+            
+                )
+            }
         </div>
     )
 }

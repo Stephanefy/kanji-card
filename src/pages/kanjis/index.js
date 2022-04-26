@@ -152,7 +152,12 @@ const KanjisIndex = () => {
 
                 )}
             </ul>
-                {isOpen && <Modal setIsOpen={setIsOpen} selectedKanji={searchTerm} />}
+                {isOpen && <Modal 
+                setIsOpen={setIsOpen} 
+                selectedKanji={searchTerm} 
+                setError={setError}
+                error={error}
+            />}
         </section>
     </div>
   )

@@ -15,6 +15,7 @@ import Quizz from './pages/quizz/Quizz';
 import Kanjis from './pages/kanjis';
 import KanjiList from './pages/kanjis/KanjiList';
 import Footer from './components/Footer';
+import DictionaryIndexPage from './pages/Dictionary';
 
 import './styles/App.css'
 import './styles/haru-theme.css';
@@ -39,6 +40,9 @@ function App() {
               </Route>
               <Route path="/les-kanjis">
                 <Kanjis/>
+              </Route>
+              <Route path="/dictionnaire">
+                <DictionaryIndexPage/>
               </Route>
               <Route path="/gakushu-kanji/:params">
                 <KanjiList/>
