@@ -10,7 +10,7 @@ const DictionaryIndexPage = () => {
   const onSearch = (e) => {
     e.preventDefault();
     console.log(e)
-    fetch('http://localhost:8888/.netlify/functions/index').then(res => console.log(res.body))
+    fetch(`https://jisho.org/api/v1/search/words?keyword=${e.target.value}`).then(res => res.json()).then(data=> console.log(data))
     
 
   }
