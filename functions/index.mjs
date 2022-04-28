@@ -1,12 +1,23 @@
-const fetch = require('node-fetch')
+import fetch from 'node-fetch';
 
-const API_ENDPOINT = 'https://jisho.org/api/v1/search/words?keyword=%E5%87%9D%E3%82%8A'
+
+
+
+const API_ENDPOINT = 'https://jisho.org/api/v1/search/words?keyword='
 
 exports.handler = async (event, context) => {
+
+
+  console.log(event)
+
   let response
+  let data;
   try {
-    response = await fetch(API_ENDPOINT)
+    response = await fetch(`${API_ENDPOINT}${event.queryStringParameters.search}`,{method: "GET"})
     // handle response
+    data = await response.json();
+
+
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
@@ -19,7 +30,7 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      data: response
+      data
     })
   }
 }

@@ -58,6 +58,12 @@
   fill: var(--card-button);
 }
 
+.magnifier-dictionary {
+  top: 10px;
+  right: 10px;
+  fill: var(--card-button);
+}
+
 .search-input {
   border: 2px solid var(--card-button)
 }

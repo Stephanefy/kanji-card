@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeIndex = () => {
   return (
-    <main className='min-h-screen'>
+    <main className='min-h-screen px-3'>
         <section className='h-full flex flex-col justify-center items-center'>
             <div>
                 <h1 className='text-5xl mt-56 text-white font-semibold'>Bienvenue sur Kanji card</h1>
