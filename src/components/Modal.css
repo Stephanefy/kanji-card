@@ -1,3 +1,7 @@
 .modal-container {
     border: 10px solid var(--card-button)
 }
+
+.modal {
+    z-index: 1000;
+}

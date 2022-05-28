@@ -39,6 +39,15 @@
     border: 10px solid var(--card-button);
 }
 
+.quizz-card-face {
+    padding:2rem;
+    font-size: 0.9rem;
+    height: 26rem;
+    background-color: #fff;
+    color: #333;
+    border: 10px solid var(--card-button);
+}
+
 .card-navigation-button{
     background:var(--card-button);
     width: 4rem;

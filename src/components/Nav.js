@@ -23,7 +23,6 @@ import './Nav.css';
     }
 
 
-    console.log(windowSize)
 
     return (
         <>
@@ -36,7 +35,7 @@ import './Nav.css';
                     <li className="mx-2"><NavLink to="/" label="Accueil" activeOnlyWhenExact={true}/></li>
                     <li className="mx-2"><NavLink to="/les-kanjis" label="Les Kanjis"/></li>
                     <li className="mx-2"><NavLink to="/dictionnaire" label="Dictionnaire"/></li>
-                    {/* <li className="mx-2"><Link to="#">Quizz</Link></li> */}
+                    <li className="mx-2"><NavLink to="/quizz" label="Quizz"></NavLink></li>
                 </ul>
 
             </div>

@@ -58,7 +58,7 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
 
     return (
         <div
-            className="h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed top-0 z-50"
+            className="modal h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed top-0"
             style={{ background: 'rgba(0, 0, 0, 0.2) 100% 100%' }}
         >
             {!kanji ? (

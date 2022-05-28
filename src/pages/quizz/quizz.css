@@ -1,0 +1,9 @@
+.btn-group{
+    display: grid;
+    place-items: center;
+}
+
+.nav-btn {
+    border: 10px solid var(--card-button)
+
+}

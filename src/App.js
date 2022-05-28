@@ -11,7 +11,7 @@ import {
 
 
 import HomePage from './pages/Home'
-import Quizz from './pages/quizz/Quizz';
+import Quizz from './pages/quizz';
 import Kanjis from './pages/kanjis';
 import KanjiList from './pages/kanjis/KanjiList';
 import Footer from './components/Footer';

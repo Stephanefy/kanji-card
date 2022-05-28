@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './LearningListModal.css';
 import {RiDeleteBin6Fill} from 'react-icons/ri'
+import Modal from './Modal';
 
 const LearningListModal = ({ setIsOpen }) => {
     const [error, setError] = useState(false)
     const [isOpen, setisOpen] = useState(false)
+    const [selectedKanji, setSelectedKanjis] = useState("")
     const [learningList, setLearningList] = useState(
         JSON.parse(localStorage.getItem('learningList'))
     )
@@ -17,8 +19,9 @@ const LearningListModal = ({ setIsOpen }) => {
     }
 
     return (
+        <>
                     <div
-                        className="h-screen w-full flex flex-col justify-center items-center learning-list-modal"
+                        className="learning-modal h-screen w-full flex flex-col justify-center items-center learning-list-modal"
                         style={{ background: 'rgba(0, 0, 0, 0.2) 100% 100%' }}>
                         <div className="py-auto sm:w-10/12 xxl:w-4/12 sm:max-w-xl  sm:mx-auto">
                             <div className="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
@@ -51,7 +54,12 @@ const LearningListModal = ({ setIsOpen }) => {
                                                 {   
                                                     learningList?.map((i, idx) => (
                                                         idx % 2 === 0 ? (
-                                                            <li className="bg-red-600 p-3 text-white flex justify-between">
+                                                            <li className="kanji-item bg-red-600 p-3 text-white flex justify-between" 
+                                                                onClick={() => {
+                                                                console.log("is Clicked")
+                                                                setSelectedKanjis(i.kanji)
+                                                                setisOpen(true)
+                                                                }}>
                                                                 <span>{i.kanji}</span>
                                                                 <span>{i.stroke_count}</span>
                                                                 <span>{i.grade}</span>
@@ -69,7 +77,7 @@ const LearningListModal = ({ setIsOpen }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="h-20 flex items-center justify-between p-3">
+                                <div className="h-20 flex items-center justify-between p-3">
                                     <button className="add-button">commencer le quizz</button>
                                     <div>
                                         <button onClick={handleFlushLearningList}><RiDeleteBin6Fill size={25}/></button>
@@ -78,7 +86,9 @@ const LearningListModal = ({ setIsOpen }) => {
                             </div>
                         </div>
                     </div>
+                    {isOpen && <Modal setIsOpen={setisOpen} selectedKanji={selectedKanji} />}
 
+            </>
     )
             
     
