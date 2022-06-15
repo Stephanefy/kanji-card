@@ -26,7 +26,7 @@ import './Nav.css';
 
     return (
         <>
-        <nav className="nav-bar w-full flex justify-between items-center">
+        <nav className="nav-bar mx-2 w-full flex justify-between items-center">
             <div className="logo">
                 <ReactLogo width="130" height="130" />
             </div>
