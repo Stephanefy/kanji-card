@@ -130,6 +130,14 @@
     .switch {
       margin-top: -4rem;
     }
+    
+    .switch-kanji {
+      position: absolute;
+      left: 14px;
+      top:11px;
+      z-index: 2;
+      cursor: pointer;
+    }
 
   }
 

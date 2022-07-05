@@ -58,7 +58,7 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
 
     return (
         <div
-            className="modal h-screen w-full flex flex-col justify-center items-center sm:py-12 fixed top-0"
+            className="modal sm:h-64 md:h-screen w-full flex flex-col justify-center items-center fixed top-0"
             style={{ background: 'rgba(0, 0, 0, 0.2) 100% 100%' }}
         >
             {!kanji ? (
@@ -66,10 +66,10 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                     <span className="loader"></span>
                 </div>
             ) : kanji.meanings && !error && (
-                <div className="py-auto xs:w- xl:w-4/12">
+                <div className="py-auto xs:w-4/12 xl:w-4/12">
                     <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
                         <button
-                            className="text-gray-600 absolute right-0 p-3"
+                            className="text-gray-600 absolute right-0 p-2"
                             onClick={handleCloseModal}
                         >
                             X
@@ -85,10 +85,10 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                                     {kanji.kanji}
                                 </span>
                             </div>
-                            <div className="w-3/4 flex flex-col">
+                            <div className="w-4/4 flex flex-col">
                                 <div
                                     rows="3"
-                                    className="p-4 text-gray-500 rounded-xl resize-none"
+                                    className="p-2 text-gray-500 rounded-xl resize-none"
                                 >
                                     <ul className="text-2xl">
                                         <li>Niveau JLPT: {kanji.jlpt}</li>

@@ -11,7 +11,6 @@ const QuizzIndexPage = () => {
 
 
 
-
     useEffect(() => {
         setChangerCard(true)
         console.log('card index', cardIndex)
@@ -35,22 +34,40 @@ const QuizzIndexPage = () => {
       const learningList = localStorage.getItem('learningList') && JSON.parse(localStorage.getItem('learningList')).filter((_,index) => index % 2 === 0)
       
       setKanjiList(learningList)
-      console.log(learningList)
+      
     }, [])
+
+    
+   
+    
+    const randomMeaning = []
+
+    if (kanjiList?.length) {
+        for (let i = 0; i <= 4 ; i++) {
+            let randomNum = Math.floor(Math.random() * (kanjiList.length * i ))
+    
+            randomMeaning.push(kanjiList[randomNum]?.meanings[i])
+    
+        }
+    }
 
 
 
     return (
         <main className="h-screen">
-            <section className="h-100 w-100 mt-64 flex items-center justify-center flex-col">
-                <div>
+            <section className="h-100 w-100 mt-64 flex items-center justify-center flex-col p-4">
                     {
                             kanjiList?.map((kanji, index) => {
                                 if(cardIndex === index){
-                                    return <QuizzCard 
-                                    kanjiDetails={kanji}
-                                    changeCard={changeCard}
-                                    />
+                                    return (
+                                    <div>
+                                        <QuizzCard 
+                                        kanjiDetails={kanji}
+                                        changeCard={changeCard}
+                                        randomMeaning={randomMeaning?.filter(e => e !== undefined)}
+                                        />
+                                    </div>
+                                    )
                                 }
                             })
                         }
@@ -66,12 +83,11 @@ const QuizzIndexPage = () => {
                                 </>
                             )
                         }
-                </div>
                 {
                     kanjiList &&  (
                         <div className="flex justify-center w-full mx-auto">
-                            <button className="nav-btn bg-red-800 rounded-full mx-5" onClick={handleChangePreviousCard}>précédent</button>
-                            <button className="nav-btn bg-red-800 rounded-full mx-5" onClick={handleChangeNextCard}>suivant</button>
+                            <button className="text-white nav-btn bg-red-800 rounded-full mx-5 p-4" onClick={handleChangePreviousCard}>précédent</button>
+                            <button className="text-white nav-btn bg-red-800 rounded-full mx-5 p-4" onClick={handleChangeNextCard}>suivant</button>
                         </div>
 
                     )

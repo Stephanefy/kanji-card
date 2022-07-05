@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../../components/card/Card.css'
 import { Transition } from 'react-transition-group'
 
-const QuizzCard = ({ kanjiDetails, changeCard }) => {
+const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning }) => {
     const defaultStyles = {
         transition: `opacity 500ms ease-in-out`,
         opacity: 0,
@@ -14,6 +14,17 @@ const QuizzCard = ({ kanjiDetails, changeCard }) => {
         exiting: { opacity: 0 },
         exited: { opacity: 0 },
     }
+
+
+
+  
+
+    console.log(randomMeaning)
+
+
+    useEffect(() => {
+        console.log(kanjiDetails)
+    },[] )
 
     const { kanji } = kanjiDetails
 
@@ -42,15 +53,20 @@ const QuizzCard = ({ kanjiDetails, changeCard }) => {
                         </p>
                     </div>
                     <div className="flex justify-center w-full">
-                        <form className="flex flex-col">
-                            <label htmlFor="meaning">
-                                Quelle est le sens de ce caractère ?
-                            </label>
-                            <input 
-                                className="border-red-200 border-4"
-                                id="meaning"
-                                type="text" 
-                            />
+                        <form className="flex flex-col w-full">
+                            {
+                                randomMeaning.map(meaning => (
+                                    <div className="flex justify-between items-center w-full">
+                                        <input
+                                            label={meaning} 
+                                            type="checkbox" 
+                                            value={meaning} />
+                                        <label>
+                                            {meaning}
+                                        </label>
+                                    </div>
+                                ))
+                            }
                         </form>
                     </div>
                 </div>
