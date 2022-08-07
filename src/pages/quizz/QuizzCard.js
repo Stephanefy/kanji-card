@@ -3,10 +3,16 @@ import '../../components/card/Card.css'
 import { Transition } from 'react-transition-group'
 
 const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning }) => {
+
+    const [correctAnswersNum, setCorrectAnswersNum] = useState(0);
+
+
     const defaultStyles = {
         transition: `opacity 500ms ease-in-out`,
         opacity: 0,
     }
+    const { kanji } = kanjiDetails
+
 
     const transitionStyles = {
         entering: { opacity: 1 },
@@ -15,6 +21,20 @@ const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning }) => {
         exited: { opacity: 0 },
     }
 
+
+    useEffect(() => {
+        if(kanji) {
+            kanjiDetails.meanings.forEach((element) => {
+                if (randomMeaning.includes(element)) {
+                    setCorrectAnswersNum(prev => prev + 1)
+                }
+            })
+        }
+
+    }, [])
+
+
+    console.log(correctAnswersNum)
 
 
   
@@ -26,7 +46,6 @@ const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning }) => {
         console.log(kanjiDetails)
     },[] )
 
-    const { kanji } = kanjiDetails
 
     return (
         <Transition in={changeCard} transition={500}>
@@ -47,9 +66,12 @@ const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning }) => {
                             {/* character here*/}
                         </p>
                     </div>
-                    <div className="h-32 flex justify-center items-center">
+                    <div className="h-32 flex flex-col justify-center items-center">
                         <p className="text-5xl cheerful-text">
-                            Testez vos connaissances
+                            Choisissez la ou les bonne(s) réponse(s)
+                        </p>
+                        <p>
+                            {correctAnswersNum} {`réponse${correctAnswersNum > 1 ? "s" : ""} possible${correctAnswersNum > 1 ? "s" : ""}`}
                         </p>
                     </div>
                     <div className="flex justify-center w-full">

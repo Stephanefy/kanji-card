@@ -40,9 +40,9 @@
 }
 
 .quizz-card-face {
-    padding: 5rem;
+    padding: 5rem 2rem;
     font-size: 0.9rem;
-    height: 26rem;
+    height: auto;
     background-color: #fff;
     color: #333;
     border: 10px solid var(--card-button);
