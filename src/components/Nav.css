@@ -2,8 +2,6 @@
     background: rgba(255, 255, 255, 1);
     z-index: 30;
     font-size: 1.2rem;
-    position: fixed;
-    top: 0;
     border-bottom: 10px solid var(--card-button);
     
 }
@@ -22,14 +20,16 @@
 .mobile-menu{
     width: 100%;
     position: absolute;
-    top: 80px;
+    top: 0;
     background: rgba(255, 255, 255, 1);
-    z-index: 999;
+    z-index: 10;
+    border-bottom: 10px solid var(--card-button);
 }
 .menu-icon-open{
     display: inline;
     width: 2.5rem;
     height: 2.5rem;
+    z-index: 99;
 }
 
 .mobile-menu li{

@@ -32,7 +32,7 @@ const DictionaryIndexPage = () => {
 
   return (
     <section className='min-h-screen'>
-                <div className='relative mt-56'>
+                <div className='relative mt-24'>
                     <form onSubmit={onSearch} className="flex justify-center">
                       <div className="flex justify-center relative w-6/12">
                         <input className="relative text-2xl search-input w-full border-gray-300 bg-white h-10 px-5 rounded-lg focus:outline-none"
@@ -52,7 +52,7 @@ const DictionaryIndexPage = () => {
                   <ul className="w-full">
                     {isLoading  && <div className="h-screen flex justify-center items-center mx-auto"><Loader /></div> }
                     {
-                      !isLoading && results?.length && results?.map(item => (
+                      !isLoading && results?.length ? results?.map(item => (
                         <li 
                           key={item.slug}
                           className="my-3 w-full text-left text-gray-700 bg-white p-3 flex"
@@ -71,7 +71,9 @@ const DictionaryIndexPage = () => {
                             </ul>
                           </div>           
                           </li>
-                      ))
+                      )) : (
+                        <p className='mt-2 text-1xl'>no results</p>
+                      )
 
                     }
                     {/* {

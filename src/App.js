@@ -3,8 +3,8 @@ import React from 'react';
 import Layout from './components/Layout';
 
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
   
 } from "react-router-dom";
@@ -29,27 +29,17 @@ function App() {
 
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Layout className="App">
-            <Switch>
-              <Route exact path="/">
-                <HomePage/>
-              </Route>
-              <Route path="/quizz">
-                <Quizz/>
-              </Route>
-              <Route path="/les-kanjis">
-                <Kanjis/>
-              </Route>
-              <Route path="/dictionnaire">
-                <DictionaryIndexPage/>
-              </Route>
-              <Route path="/gakushu-kanji/:params">
-                <KanjiList/>
-              </Route>
-            </Switch>
+            <Routes>
+              <Route exact path="/" element={<HomePage/>} />
+              <Route path="/quizz" element={<Quizz/>}/>
+              <Route path="/les-kanjis" element={<Kanjis/>} />
+              <Route path="/dictionnaire" element={<DictionaryIndexPage/>} />
+              <Route path="/gakushu-kanji/:params" element={<KanjiList/>} />
+            </Routes>
         </Layout>         
-      </Router>
+      </BrowserRouter>
     </>
   );
 }

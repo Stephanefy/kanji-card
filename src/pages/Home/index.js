@@ -2,10 +2,10 @@ import React from 'react'
 
 const HomeIndex = () => {
   return (
-    <main className='min-h-screen px-6 pb-3'>
-        <section className='h-full flex flex-col justify-center items-center'>
+    <main className='h-screen w-full px-6 pb-3'>
+        <section className='flex h-32 w-6/12 mx-auto lg:h-full flex-col justify-center items-center'>
             <div>
-                <h1 className='text-5xl mt-56 text-white font-semibold'>Bienvenue sur Kanji card</h1>
+                <h1 className='text-5xl text-white font-semibold'>Bienvenue sur Kanji card</h1>
             </div>
             <div className="mt-8">
                 <h3 className='text-3xl text-white'>Retrouvez les 13 000 kanjis de la langue japonaise</h3>

@@ -4,10 +4,9 @@ import { TiTimes} from "react-icons/ti";
 import MobileMenu from './Mobile-menu';
 import HaruNatsuMode from '../HaruNatsuMode/index'
 import { useRouteMatch, Link } from 'react-router-dom';
-import NavLink from './NavLink';
 import { useWindowSize } from '../hooks/useWindowSize'
 
-import { ReactComponent as ReactLogo} from '../images/kanji-card-app-logo.svg'
+import { ReactComponent as Logo} from '../images/kanji-card-app-logo.svg'
 
 
 import './Nav.css';
@@ -26,25 +25,27 @@ import './Nav.css';
 
     return (
         <>
-        <nav className="nav-bar mx-2 w-full flex justify-between items-center">
+        <nav id="header-nav" className="w-12/12 flex items-center justify-between z-50">
             <div className="logo">
-                <ReactLogo width="130" height="130" />
+                <Logo width="130" height="130" />
             </div>
-            <div className='pl-32'>
-                <ul className="hidden md:flex flex-initial w-full px-auto">
-                    <li className="mx-2"><NavLink to="/" label="Accueil" activeOnlyWhenExact={true}/></li>
-                    <li className="mx-2"><NavLink to="/les-kanjis" label="Les Kanjis"/></li>
-                    <li className="mx-2"><NavLink to="/dictionnaire" label="Dictionnaire"/></li>
-                    <li className="mx-2"><NavLink to="/quizz" label="Quizz"></NavLink></li>
-                </ul>
+            <div className='flex items-center'>
+                <div>
+                    <ul className="hidden md:flex list-none w-full px-auto">
+                        <li className="mx-2 cursor-pointer text-1xl hover:transform hover:scale-110 font-bold ease-in duration-100 text-slate-700"><Link to="/" label="Accueil" >Accueil</Link></li>
+                        <li className="mx-2 cursor-pointer text-1xl hover:transform hover:scale-110 font-bold ease-in duration-100 text-slate-700"><Link to="les-kanjis" label="Les Kanjis">Les Kanjis</Link></li>
+                        <li className="mx-2 cursor-pointer text-1xl hover:transform hover:scale-110 font-bold ease-in duration-100 text-slate-700"><Link to="dictionnaire" label="Dictionnaire">Dictionnaire</Link></li>
+                        <li className="mx-2 cursor-pointer text-1xl hover:transform hover:scale-110 font-bold ease-in duration-100 text-slate-700"><Link to="quizz" label="Quizz">Quizz</Link></li>
+                    </ul>
 
-            </div>
-            <div>
-                {windowSize.width > 560 && <HaruNatsuMode/> }
+                </div>
+                <div>
+                    {windowSize.width > 560 && <HaruNatsuMode/> }
+                </div>
             </div>
 
             <div className="flex md:hidden" onClick={handleClick}>
-                {open ? <TiTimes className="menu-icon-open" /> : <TiThMenu className="menu-icon" /> }
+                {open ? <TiTimes className="menu-icon-open z-50" /> : <TiThMenu className="menu-icon z-50" /> }
             </div>
         </nav>
         {open && <MobileMenu/>}

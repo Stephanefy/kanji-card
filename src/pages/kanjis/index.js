@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/Modal'
 import Gakushu from './Gakushu';
@@ -48,6 +48,10 @@ const KanjiListType = [
 const KanjisIndex = () => {
  
 
+  const location = useLocation()
+
+  console.log(location)
+
 
   const [grade, setGrade] = useState(0)
   const [selectedCollection, setSelectedCollection] = useState("")
@@ -56,7 +60,7 @@ const KanjisIndex = () => {
   const [error, setError] = useState(false)
 
 
-  const history = useHistory()
+  const navigate = useNavigate()
   
   const onSelectKanjiCollection = (e) => {
       console.log(e.currentTarget.textContent)
@@ -64,7 +68,7 @@ const KanjisIndex = () => {
   }
 
   const pushToGrade = (params) => {
-      history.push(`/gakushu-kanji/${params}`,{params: params})
+    navigate(`/gakushu-kanji/${params}`,{params: params})
   }
   
 
@@ -88,9 +92,9 @@ const KanjisIndex = () => {
   },[error])
 
   return (
-    <div className='w-full'>
+    <div className='w-full h-full'>
         <section className="min-h-screen flex md:flex-column items-center flex-wrap sm:flex-col">
-            <div className="flex flex-col items-center pt-56 mx-auto">
+            <div className="flex flex-col items-center mt-14 mx-auto">
                 <div>
                 {
                     KanjiListType.map(b => (

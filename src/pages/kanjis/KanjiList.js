@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '../../../node_modules/@splidejs/splide/dist/css/splide.min.css';
 import Modal from '../../components/Modal';
@@ -11,6 +11,8 @@ const KanjiList = () => {
 
 
     const location = useLocation()
+    const { params } = useParams()
+    
 
     const [kanjis, setKanjis] = useState([])
     const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +20,8 @@ const KanjiList = () => {
 
 
     const learningList = JSON.parse(localStorage.getItem('learningList'))
+    
 
-    let params = location.state.params
 
     useEffect(() => {
 
@@ -96,7 +98,7 @@ const KanjiList = () => {
     return (
         <section className="min-h-screen w-full flex md:flex-column items-center flex-wrap sm:flex-col">
         <div className='flex h-26 w-full justify-center items-center'>
-            <h2 className='text-white text-5xl mt-32'>{KanjiListTitle(location.state.params)}</h2>
+            <h2 className='text-white text-5xl mt-32'>{KanjiListTitle(params)}</h2>
         </div>
         {
             kanjis.length === 0 ? (

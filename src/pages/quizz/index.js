@@ -28,13 +28,18 @@ const QuizzIndexPage = () => {
     }
 
     useEffect(() => {
-        const learningList =
-            localStorage.getItem('learningList') &&
-            JSON.parse(localStorage.getItem('learningList')).filter(
+        const learningList = localStorage.getItem('learningList') 
+        
+        if (learningList) {
+            JSON.parse(learningList)?.filter(
                 (_, index) => index % 2 === 0
             )
+            setKanjiList(learningList)
 
-        setKanjiList(learningList)
+        }
+
+        setKanjiList([])
+
     }, [])
 
     const randomMeaning = []
@@ -48,7 +53,7 @@ const QuizzIndexPage = () => {
     }
 
     return (
-        <main className="h-screen">
+        <main className="min-h-screen">
             <section className="h-100 w-100 mt-64 flex items-center justify-center flex-col p-4">
                 {kanjiList?.map((kanji, index) => {
                     if (cardIndex === index) {
@@ -76,7 +81,7 @@ const QuizzIndexPage = () => {
                         )
                     }
                 })}
-                {!kanjiList && (
+                {kanjiList.length === 0 && (
                     <>
                         <p className="text-white">
                             Aucune sélection de Kanji dans votre liste
@@ -93,7 +98,7 @@ const QuizzIndexPage = () => {
                         </div>
                     </>
                 )}
-                {kanjiList && (
+                {kanjiList.length > 0 ? (
                     <div className="flex justify-center w-full mx-auto">
                         <button
                             className="text-white nav-btn bg-red-800 rounded-full mx-5 p-4"
@@ -108,7 +113,8 @@ const QuizzIndexPage = () => {
                             suivant
                         </button>
                     </div>
-                )}
+                ) : null 
+                }
             </section>
         </main>
     )
