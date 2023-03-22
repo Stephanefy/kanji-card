@@ -5,6 +5,3 @@
 .kanji-item {
     cursor: pointer;
 }
-.kanji-item:hover {
-    border: 10px solid green;
-}

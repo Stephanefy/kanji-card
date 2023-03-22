@@ -8,6 +8,7 @@ const DictionaryIndexPage = () => {
   const [searchTerm, setSearchTerm] = useState();
   const [results, setResult] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [isFirstSearch, setIsFirstSearch] = useState(true)
 
 
 
@@ -15,6 +16,7 @@ const DictionaryIndexPage = () => {
     
     e.preventDefault();
     setIsLoading(true)
+    setIsFirstSearch(false)
     console.log(e)
     fetch(`/.netlify/functions/index?search=${searchTerm}`)
       .then(res => res.json())
@@ -50,7 +52,7 @@ const DictionaryIndexPage = () => {
                 </div>
                 <div className="w-6/12 flex justify-start mx-auto">
                   <ul className="w-full">
-                    {isLoading  && <div className="h-screen flex justify-center items-center mx-auto"><Loader /></div> }
+                    {isLoading  && <div className="h-56 flex justify-center items-center mx-auto"><Loader /></div> }
                     {
                       !isLoading && results?.length ? results?.map(item => (
                         <li 
@@ -72,7 +74,7 @@ const DictionaryIndexPage = () => {
                           </div>           
                           </li>
                       )) : (
-                        <p className='mt-2 text-1xl'>no results</p>
+                        !isFirstSearch && !isLoading && <p className='mt-2 text-1xl'>no results</p>
                       )
 
                     }

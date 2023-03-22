@@ -48,7 +48,7 @@ import './Nav.css';
                 {open ? <TiTimes className="menu-icon-open z-50" /> : <TiThMenu className="menu-icon z-50" /> }
             </div>
         </nav>
-        {open && <MobileMenu/>}
+        {open && <MobileMenu setOpen={setOpen}/>}
         </>
     )
 }

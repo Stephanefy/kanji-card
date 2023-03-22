@@ -19,6 +19,7 @@ import DictionaryIndexPage from './pages/Dictionary';
 
 import './styles/App.css'
 import './styles/haru-theme.css';
+import { LearningListContextProvider } from './context/LearningListContext';
 
 
 
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+          <LearningListContextProvider>
         <Layout className="App">
             <Routes>
               <Route exact path="/" element={<HomePage/>} />
@@ -39,6 +41,7 @@ function App() {
               <Route path="/gakushu-kanji/:params" element={<KanjiList/>} />
             </Routes>
         </Layout>         
+          </LearningListContextProvider>
       </BrowserRouter>
     </>
   );

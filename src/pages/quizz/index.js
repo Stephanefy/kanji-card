@@ -29,6 +29,7 @@ const QuizzIndexPage = () => {
 
     useEffect(() => {
         const learningList = localStorage.getItem('learningList') 
+        console.log(learningList)
         
         if (learningList) {
             JSON.parse(learningList)?.filter(
@@ -38,56 +39,40 @@ const QuizzIndexPage = () => {
 
         }
 
-        setKanjiList([])
+        setKanjiList(JSON.parse(learningList))
 
     }, [])
 
-    const randomMeaning = []
-
-    if (kanjiList?.length) {
-        for (let i = 0; i <= 4; i++) {
-            let randomNum = Math.floor(Math.random() * kanjiList.length)
-
-            randomMeaning.push(kanjiList[randomNum]?.meanings[i])
-        }
-    }
 
     return (
         <main className="min-h-screen">
-            <section className="h-100 w-100 mt-64 flex items-center justify-center flex-col p-4">
-                {kanjiList?.map((kanji, index) => {
+            <section className="h-100 w-100 mt-64 md:mt-8 flex items-center justify-center flex-col p-4">
+                
+                {kanjiList ? kanjiList?.map((kanji, index) => {
                     if (cardIndex === index) {
                         return (
-                            <div>
+                            <div key={kanji}>
                                 <QuizzCard
                                     kanjiDetails={kanji}
                                     changeCard={changeCard}
                                     randomMeaning={[
-                                        ...randomMeaning?.filter(
-                                            (e) =>
-                                                e !== undefined &&
-                                                e !==
-                                                    kanji.meanings[
-                                                        kanji.meanings.length -
-                                                            1
-                                                    ]
+                                        ...kanjiList?.filter(
+                                            (e, index, arr) =>
+                                                index < 3 && e.kanji !== kanji.kanji
                                         ),
-                                        kanji.meanings[
-                                            kanji.meanings.length - 1
-                                        ],
                                     ]}
+                                    correctMeaning={kanji.meanings[0]}
                                 />
                             </div>
                         )
                     }
-                })}
-                {kanjiList.length === 0 && (
+                }): (
                     <>
                         <p className="text-white">
                             Aucune sélection de Kanji dans votre liste
                         </p>
                         <div className="btn-group mt-2">
-                            <button className="nav-btn rounded-full bg-red-800">
+                            <button className="nav-btn rounded-full bg-red-800 px-3 py-2">
                                 <Link
                                     to="/les-kanjis"
                                     className="text-white p-2 mx-auto"
@@ -97,8 +82,9 @@ const QuizzIndexPage = () => {
                             </button>
                         </div>
                     </>
+                
                 )}
-                {kanjiList.length > 0 ? (
+                {kanjiList?.length > 0 ? (
                     <div className="flex justify-center w-full mx-auto">
                         <button
                             className="text-white nav-btn bg-red-800 rounded-full mx-5 p-4"

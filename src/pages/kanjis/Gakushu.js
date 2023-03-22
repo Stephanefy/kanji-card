@@ -9,7 +9,7 @@ const Gakushu = ({pushToGrade, idx, grade}) => {
                         className="h-full w-full bg-white rounded-lg shadow-2xl flex justify-center items-center"
                         onClick={() => pushToGrade(idx+1)}
                         >
-                        <h3 className="text-5xl font-extrabold text-6xl">{grade.title}</h3>
+                        <h3 className="font-extrabold text-6xl">{grade.title}</h3>
                     </div>
             </div>
     </div>
