@@ -14,8 +14,9 @@ import HomePage from './pages/Home'
 import Quizz from './pages/quizz';
 import Kanjis from './pages/kanjis';
 import KanjiList from './pages/kanjis/KanjiList';
-import Footer from './components/Footer';
-import DictionaryIndexPage from './pages/Dictionary';
+import NotFound from './pages/404';
+// import Footer from './components/Footer';
+// import DictionaryIndexPage from './pages/Dictionary';
 
 import './styles/App.css'
 import './styles/haru-theme.css';
@@ -37,8 +38,10 @@ function App() {
               <Route exact path="/" element={<HomePage/>} />
               <Route path="/quizz" element={<Quizz/>}/>
               <Route path="/les-kanjis" element={<Kanjis/>} />
-              <Route path="/dictionnaire" element={<DictionaryIndexPage/>} />
+              {/* <Route path="/dictionnaire" element={<DictionaryIndexPage/>} /> */}
               <Route path="/gakushu-kanji/:params" element={<KanjiList/>} />
+              <Route path='*' element={<NotFound />} />
+
             </Routes>
         </Layout>         
           </LearningListContextProvider>

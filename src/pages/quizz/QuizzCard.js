@@ -17,7 +17,8 @@ function shuffle(arr) {
 
 const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning, correctMeaning }) => {
 
-    let answerArray = randomMeaning?.map((meaning, index) => {
+    
+    let answerArray = randomMeaning.length > 1 && randomMeaning?.map((meaning, index) => {
         return meaning.meanings[0]
     }).concat(correctMeaning)
 
@@ -90,7 +91,7 @@ const QuizzCard = ({ kanjiDetails, changeCard, randomMeaning, correctMeaning }) 
                     <div className="flex justify-center w-full">
                         <form className="flex flex-col w-full">
                             {
-                                shuffle(answerArray)?.map((meaning, index) => (
+                                randomMeaning.length > 1 && shuffle(answerArray)?.map((meaning, index) => (
                                     <div key={index} className="flex justify-between items-center w-full">
                                         <input
                                             label={meaning} 

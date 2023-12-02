@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Definitions from '../../components/Definitions';
 import Loader from '../../components/Loader';
+import { TextInput } from 'flowbite-react'
 
 const DictionaryIndexPage = () => {
 
@@ -37,7 +38,8 @@ const DictionaryIndexPage = () => {
                 <div className='relative mt-24'>
                     <form onSubmit={onSearch} className="flex justify-center">
                       <div className="flex justify-center relative w-6/12">
-                        <input className="relative text-2xl search-input w-full border-gray-300 bg-white h-10 px-5 rounded-lg focus:outline-none"
+                        <TextInput className="relative text-2xl w-full h-10 px-5 rounded-lg focus:outline-none"
+                            sizing="md"
                             type="search" 
                             name="search" 
                             placeholder="Rechercher" 

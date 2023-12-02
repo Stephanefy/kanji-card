@@ -14,7 +14,9 @@ const LearningListModal = ({ setIsOpen }) => {
         useContext(LearningListContext)
 
     useEffect(() => {
-        localStorage.setItem('learningList', JSON.stringify(learningList))
+        if (learningList?.length > 0) {
+            localStorage.setItem('learningList', JSON.stringify(learningList))
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -84,9 +86,18 @@ const LearningListModal = ({ setIsOpen }) => {
                                     <RiDeleteBin6Fill size={25} />
                                 </button>
                             </div>
-                            <Link to="/quizz"nclassName="add-button">
-                                <span onClick={() => setIsOpen(false)} className='text-2xl'>commencer le quizz</span>
-                            </Link>
+                            {
+                                learningList?.length > 2 ? (
+                                    <Link to="/quizz"nclassName="add-button">
+                                        <span onClick={() => setIsOpen(false)} className='text-2xl'>commencer le quizz</span>
+                                    </Link>
+
+                                ) : (
+                                    <Link to="/les-kanjis"nclassName="add-button">
+                                    <span onClick={() => setIsOpen(false)} className='text-2xl'>Ajouter au moins 3 kanjis à la liste</span>
+                                </Link>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

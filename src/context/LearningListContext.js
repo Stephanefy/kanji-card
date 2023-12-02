@@ -14,7 +14,7 @@ export const LearningListContextProvider = ({ children }) => {
 
 
 
-    const [learningList, setLearningList] = useState()
+    const [learningList, setLearningList] = useState(() => JSON.parse(localStorage.getItem('learningList')) || [])
 
   
 

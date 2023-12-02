@@ -6,9 +6,9 @@ export default function CardFront({character}) {
   return (
     <>
       <div className="card-face w-full mb-5 rounded shadow-xl">
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-50">
           {character.category ? (
-            <p className="font-bold text-2xl p-4">
+            <p className="font-bold text-2xl p-4 mt-20">
               Catégorie: {character.category}
             </p>
           ) : (
