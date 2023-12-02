@@ -3,6 +3,7 @@ import '../pages/kanjis/kanjiListCard.css'
 import './Modal.css'
 import { MdOutlineLibraryAdd } from 'react-icons/md'
 import { LearningListContext } from '../context/LearningListContext'
+import { Card } from 'flowbite-react'
 
 const Modal = ({ setIsOpen, selectedKanji }) => {
     const [kanji, setKanji] = useState(null)
@@ -70,7 +71,7 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
             ) : (
                 kanji.meanings &&
                 !error && (
-                    <div className="py-auto xs:w-4/12 xl:w-4/12">
+                    <div className="w-6/12">
                         <div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg relative">
                             <button
                                 className="text-gray-600 absolute right-0 p-2"
@@ -78,25 +79,25 @@ const Modal = ({ setIsOpen, selectedKanji }) => {
                             >
                                 X
                             </button>
-                            <div className="px-12 py-5">
+                            <div className="px-5 py-5">
                                 <h2 className="text-gray-800 text-3xl font-semibold  flex justify-center">
                                     {kanji.grade}e année
                                 </h2>
                             </div>
                             <div className="bg-gray-200 w-full flex flex-col items-center">
-                                <div className="flex flex-col items-center py-6 space-y-3">
-                                    <span className="text-gray-800 text-6xl">
+                                <div className="flex flex-col items-center py-4 space-y-3">
+                                    <span className="bg-white p-6 rounded-lg text-gray-800 text-6xl">
                                         {kanji.kanji}
                                     </span>
                                 </div>
-                                <div className="w-80 flex flex-col">
+                                <div className="w-full flex flex-col rounded-md">
                                     <div
                                         rows="3"
-                                        className="p-2 text-gray-500 rounded-xl resize-none"
+                                        className="p-2 text-gray-500 rounded-xl resize-none w-full"
                                     >
-                                        <ul className="text-2xl flex flex-col">
+                                        <ul className="text-2xl flex flex-col w-full rounded-lg">
                                             <li>Niveau JLPT: {kanji.jlpt}</li>
-                                            <li className="bg-red-600 p-3 text-white">
+                                            <li className="bg-red-600 p-3 text-white rounded-tr-lg rounded-tl-lg">
                                                 Lecture Kun:{' '}
                                                 {kanji.kun_readings}
                                             </li>

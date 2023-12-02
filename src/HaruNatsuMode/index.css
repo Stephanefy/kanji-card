@@ -149,6 +149,7 @@
       bottom: 200px;
       display: flex;
       flex-direction: column;
+      z-index: 99;
     }
     .switch {
       margin-top: .5em;
